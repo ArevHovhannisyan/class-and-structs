@@ -1,0 +1,49 @@
+// Class in c++ we used instead of types,used when we have a hard tasks.
+// Struct is a Data Type, which take us in diferrent group of variables types
+// to colect in one.
+
+// Определить класс Children, который содержит такие поля (члены класса): 
+// закрытые – имя ребенка, фамилию и возраст , публичные – методы ввода данных 
+// и отображения их на экран.Объявить два объекта класса, внести данные и показать их.
+
+#include <iostream>
+using namespace std;
+
+class Children
+{
+    private:
+        string _firstname;
+        string _lastname;
+        int _age;
+        
+    public:
+        void setInformation(string firstname, string lastname, int age)
+        {
+            _firstname = firstname;
+            _lastname = lastname;
+            _age = age;
+        }
+        
+        string print()
+        {
+            string info;
+            info += "Firstname: " + _firstname + "\n";
+            info += "Lastname: " + _lastname + "\n";
+            info += "Age: " + to_string(_age) + "\n";
+            
+            return info;
+        }
+};
+
+int main()
+{
+    Children ch1, ch2;
+    
+    ch1.setInformation("John", "Smith", 11);
+    ch2.setInformation("Anna", "Wolter", 10);
+    cout << ch1.print() << ch2.print();
+    
+    
+    
+    return 0;
+}
